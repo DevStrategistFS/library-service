@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS books (
     title VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,
     isbn VARCHAR(20) UNIQUE NOT NULL,
+    is_borrowed BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -13,13 +14,12 @@ CREATE TABLE IF NOT EXISTS books (
 CREATE TABLE IF NOT EXISTS members (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    contact_info VARCHAR(255),
+    email VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- 3. Create Borrowing Records Table
 -- Tracks the actual lending operations
--- ON DELETE CASCADE ensures if a book/member is deleted, the record is handled
 CREATE TABLE IF NOT EXISTS borrowing_records (
     id SERIAL PRIMARY KEY,
     book_id INTEGER NOT NULL REFERENCES books(id) ON DELETE CASCADE,
