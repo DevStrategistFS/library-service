@@ -49,7 +49,7 @@ library-service/
 ### 1. Database Configuration
 1. Ensure **PostgreSQL** is running on your local machine (`127.0.0.1:5432`).
 2. Create a new database named `library_service_db`.
-3. Execute the `scripts/init.sql` file using your preferred SQL tool (pgAdmin, psql) to create the `books` and `members` tables.
+3. Execute the `scripts/init.sql` file using your preferred SQL tool (pgAdmin, psql) to create the `books`, `members` and `borrowing_records` tables.
     - **Default Username:** `postgres`
     - **Default Password:** `lib_password`
 
@@ -95,4 +95,10 @@ library-service/
 To verify that the `CreateMember` gRPC functionality is working correctly without the UI, run the provided test script:
 ```bash
 python backend/app/test_grpc.py
+```
+
+🔄 Regenerating gRPC Stubs (Optional)
+If you modify the proto/library.proto file, you must regenerate the Python stubs using the following command from the backend/ directory:
+```bash
+python -m grpc_tools.protoc -I../proto --python_out=./codegen --grpc_python_out=./codegen ../proto/library.proto
 ```
