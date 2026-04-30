@@ -9,9 +9,7 @@ export async function POST(request: Request) {
   try {
     const { bookId } = await request.json();
 
-    // Standard gRPC call wrapped in a Promise for Next.js compatibility
     return new Promise((resolve) => {
-      // We are passing member_id: 1, assuming 'Ankur Rohit' is registered with ID 1
       client.BorrowBook({ book_id: bookId, member_id: 1 }, (err: any, response: any) => {
         if (err) {
           console.error('--- gRPC Borrow Call Failed ---');

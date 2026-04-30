@@ -6,7 +6,6 @@ export async function POST(request: Request) {
     const { title, author, isbn } = await request.json();
 
     return new Promise((resolve) => {
-      // Calling the CreateBook RPC method on our Python Server
       client.CreateBook({ title, author, isbn }, (err: any, response: any) => {
         if (err) {
           console.error('gRPC Create Error:', err);

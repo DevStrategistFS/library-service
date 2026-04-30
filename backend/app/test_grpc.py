@@ -18,7 +18,6 @@ def run_test():
         print("--- STARTING gRPC INTEGRATION TEST ---")
 
         # --- TEST 1: CREATE A MEMBER ---
-        # This populates your currently empty MEMBERS table
         print("\n[Test 1] Registering a new member...")
         try:
             member_req = pb2.MemberRequest(name="Ankur Rohit", email="ankur@example.com")

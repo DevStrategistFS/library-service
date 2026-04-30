@@ -15,7 +15,6 @@ export async function GET() {
         // Return an empty array on error to prevent the .map() crash
         resolve(NextResponse.json([]));
       } else {
-        // gRPC responses often wrap arrays in an object property (e.g., response.books)
         const books = response && response.books ? response.books : [];
         resolve(NextResponse.json(books));
       }
