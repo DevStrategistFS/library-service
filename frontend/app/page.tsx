@@ -107,7 +107,6 @@ export default function LibraryHome() {
       <div className="max-w-5xl mx-auto px-6 py-12">
         <header className="mb-12 border-b border-slate-200 pb-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Library Service</h1>
-          <p className="text-slate-500 mt-2 font-medium">gRPC Management System</p>
 
           <nav className="flex gap-2 bg-slate-200/50 p-1 rounded-xl mt-8 w-fit">
             <button

@@ -10,9 +10,9 @@ A modern, full-stack library management system utilizing **gRPC** for high-perfo
 - **Service Validation:** Multi-layer validation for ISBN formats and input lengths to ensure data integrity.
 
 ## 🛠️ Tech Stack
-- **Frontend:** Next.js 14 (TypeScript), Tailwind CSS
+- **Frontend:** Next.js 16 (TypeScript), Node.js 20.20.2 (LTS recommended), npm 10.8.2, Tailwind CSS
 - **Backend:** Python 3.x, gRPC, Psycopg2
-- **Database:** PostgreSQL 15+
+- **Database:** PostgreSQL 18.x
 - **Communication:** Protocol Buffers (Proto3)
 
 ---
@@ -92,7 +92,7 @@ library-service/
 - **Admin Panel:** Add new books to the system. *Note: The ISBN field requires a minimum of 10 characters.*
 
 ### Member Management (Backend)
-To verify that the `CreateMember` gRPC functionality is working correctly without the UI, run the provided test script:
+To verify the core backend integration (gRPC, Database, and Validation) without the UI, run the provided integration test script from the root directory:
 ```bash
 python backend/app/test_grpc.py
 ```
